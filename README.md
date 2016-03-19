@@ -15,22 +15,22 @@ Require the module:
 ```js
 var firewall = require('g4js-firewall').Firewall;
 
-fw1.addRule('^/admin', 'admin', '*');
-fw1.addRule('^/orders', ['user','admin'], ['GET','PUT','POST']);
-fw1.addRule('^/orders', 'admin', 'DELETE');
-fw1.addRule('^/profile', ['user','admin'], ['GET','PUT']);
-fw1.addRule('^/signup', 'readonly', 'POST');
-fw1.addRule('^/shop', 'readonly', 'GET');
+firewall.addRule('^/admin', 'admin', '*');
+firewall.addRule('^/orders', ['user','admin'], ['GET','PUT','POST']);
+firewall.addRule('^/orders', 'admin', 'DELETE');
+firewall.addRule('^/profile', ['user','admin'], ['GET','PUT']);
+firewall.addRule('^/signup', 'readonly', 'POST');
+firewall.addRule('^/shop', 'readonly', 'GET');
 
 var url = '/admin';
 var roles = ['admin'];
 var method = 'GET';
 
 // returns matching rule if match found
-var matchingRule = fw1.check(url, roles, method);
+var matchingRule = firewall.check(url, roles, method);
 
 // returns undefined if no matching rules found
-var noBueno = fw1.check(url, 'hog_rider', method);
+var noBueno = firewall.check(url, 'hog_rider', method);
 
 // express middleware coming soon...
 
