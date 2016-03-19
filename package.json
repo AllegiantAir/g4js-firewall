@@ -1,0 +1,47 @@
+{
+  "name": "g4js-firewall",
+  "version": "0.1.0",
+  "description": "Simple pattern based firewall that supports roles and HTTP methods.",
+  "main": "lib",
+  "directories": {
+    "lib": "lib",
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllegiantAir/g4js-firewall.git"
+  },
+  "keywords": [
+    "acl",
+    "firewall",
+    "express",
+    "roles",
+    "permissions"
+  ],
+  "author": "Nesbert Hidalgo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AllegiantAir/g4js-firewall/issues"
+  },
+  "homepage": "https://github.com/AllegiantAir/g4js-firewall#readme",
+  "dependencies": {
+    "lodash": "^4.6.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-count": "^0.2.0",
+    "gulp-docco": "0.0.4",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-shell": "^0.5.2",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "ROOT": { "url":"/" },
+  "ADMIN": { "url":"/admin" },
+  "ADMIN_SETTINGS": { "url":"/admin/settings" },
+  "ADMIN_USERS_1": { "url":"/admin/users/1" },
+  "USER_12345": { "url":"/users/12345" },
+  "ORDERS": { "url":"/orders?var1=123&var2=456" },
+  "FOOBAR": { "url":"/foo/bar?var1=123&var2=456" }
+}
