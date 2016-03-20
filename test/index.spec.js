@@ -2,7 +2,7 @@
 
 var firewall = require('../lib');
 
-describe('main module', function(){
+describe('g4js-firewall module', function(){
 
   describe('exports', function(){
 
