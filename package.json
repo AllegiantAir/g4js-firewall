@@ -1,6 +1,6 @@
 {
   "name": "g4js-firewall",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple pattern based firewall that supports roles and HTTP methods.",
   "main": "lib",
   "directories": {
