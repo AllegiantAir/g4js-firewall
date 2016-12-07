@@ -12,6 +12,8 @@ fw1.addRule('^/orders', 'admin', 'DELETE');
 fw1.addRule('^/profile', ['user','admin'], ['GET','PUT']);
 fw1.addRule('^/signup', 'readonly', 'POST');
 fw1.addRule('^/shop', 'readonly', 'GET');
+fw1.addRule('^/shop', 'admin', 'PUT');
+fw1.addRule('^/shop', ['admin', 'user'], '*');
 
 // basepath support
 var fw2 = new Firewall(new RegExp('/api/v1'));
@@ -217,6 +219,20 @@ describe('firewall module', function(){
     it('fw1 should deny access "/admin",readonly,GET', function(){
 
       var matchingRule = fw1.check('/admin', ['readonly'], 'GET');
+      assert.isUndefined(matchingRule);
+
+    });
+
+    // The firewall rules are matched as per the sequesnce in which they were added
+    // In some cases, there might be a requirement to allow all routes within a namespace
+    // fw1.addRule('^/shop', 'admin', 'PUT');
+    // fw1.addRule('^/shop', ['admin', 'user'], '*');
+    // In the above example we want dont want the user to be able to PUT to a /shop
+    // But we might want the user to access /shop/foo, /shop/bar, /shop/baz and shop/*
+
+    it('fw1 should deny access "/shop",user,PUT', function(){
+
+      var matchingRule = fw1.check('/shops', ['user'], 'PUT');
       assert.isUndefined(matchingRule);
 
     });
