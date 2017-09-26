@@ -23,7 +23,7 @@ var firewall = new Firewall();
 // admin path restricted to admin role with all methods allowed
 firewall.addRule('^/admin', 'admin', '*');
 
-// admin path restricted to admin role with all methods allowed
+// orders path restricted to user and admin role using GET, PUT, and POST
 firewall.addRule('^/orders', ['user','admin'], ['GET','PUT','POST']);
 
 // signup path restricted to readonly role using POST method
